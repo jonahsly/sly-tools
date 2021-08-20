@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  const [tmda,setTmda] = React.useState({
-    mes: 5,
-    dia: 4,
+  const [tmda,setTmda] = React.useState({ //variable [2 variables: objeto, modificador]
+    mes: 'Enero',
+    dia: 'Lunes',
     desde_hs: 8,
     hasta_hs: 13,
     censoAut: 251,
@@ -25,12 +25,35 @@ function App() {
     }
     return sum;
   }
+  const calculateDia = () => {
+    const week = [ 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo']
+    for (let index = 0; index < 7; index++) {
+      if (tmda.dia.toLowerCase() == week[index]) {
+        return porcAdia[index];
+      }
+    }
+  }
+  const calculateMes = () => {
+    const month = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'setiembre', 'octubre', 'noviembre', 'diciembre']
+    for (let index = 0; index < 12; index++) {
+      if (tmda.mes.toLowerCase() == month[index]) {
+        return porcAdia[index];
+      }
+    }
+  }
 
-  const result = censoA * (100 / calculateHora()) * (100 / porcAdia[tmda.dia]) * (100 / porcAmes[tmda.mes]);
+  const result = Math.round(censoA * (100 / calculateHora()) * (100 / calculateDia()) * (100 / calculateMes()));
   
   const onChange = (event) => {
     const value = event.target.value;
-    const name = event.target.name;
+    const name = event.target.name;    
+    if (name === 'mes' || name === 'dia') {
+      setTmda({
+        ...tmda,
+        [name]: value,
+      })
+      return;
+    }
     setTmda({
       ...tmda,
       [name]: parseFloat(value),
@@ -47,11 +70,9 @@ function App() {
         <h1>
           Sly Tools
         </h1>
-
         <h3>
-          T.M.D.A. 
+          Tránsito Medio Diario Anual 
         </h3>
-
         <label>
           Mes del Censo
         </label>
@@ -59,7 +80,6 @@ function App() {
           name="mes"
           onChange={onChange}
         />
-
         <label>
           Día del Censo
         </label>
@@ -67,7 +87,6 @@ function App() {
           name="dia"
           onChange={onChange}
         />
-
         <label>
           Desde hs:
         </label>
@@ -75,7 +94,6 @@ function App() {
           name="desde_hs"
           onChange={onChange}
         />
-
         <label>
           Hasta horas:
         </label>
@@ -83,7 +101,6 @@ function App() {
           name="hasta_hs"
           onChange={onChange}
         />
-
         <label>
           Censo de automóviles
         </label>
@@ -91,7 +108,6 @@ function App() {
           name="censoAut"
           onChange={onChange}
         />
-
         <label>
           Censo de Camiones y ómnibus
         </label>
@@ -99,7 +115,6 @@ function App() {
           name="censoCam"
           onChange={onChange}
         />
-          
         <div>
           {
             result
