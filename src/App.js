@@ -59,11 +59,6 @@ function App() {
       [name]: parseFloat(value),
     })
   }
-  
-
-
-  console.log(tmda);
-
   return (
     <React.Fragment>
       <div className="App">
@@ -74,54 +69,55 @@ function App() {
           <h3>
             Tránsito Medio Diario Anual 
           </h3>
-          <label>
-            Mes del Censo
-          </label>
-          <input 
-            name="mes"
-            onChange={onChange}
-          />
-          <label>
-            Día del Censo
-          </label>
-          <input 
-            name="dia"
-            onChange={onChange}
-          />
-          <label>
-            Desde hs:
-          </label>
-          <input 
-            name="desde_hs"
-            onChange={onChange}
-          />
-          <label>
-            Hasta horas:
-          </label>
-          <input 
-            name="hasta_hs"
-            onChange={onChange}
-          />
-          <label>
-            Censo de automóviles
-          </label>
-          <input 
-            name="censoAut"
-            onChange={onChange}
-          />
-          <label>
-            Censo de Camiones y ómnibus
-          </label>
-          <input 
-            name="censoCam"
-            onChange={onChange}
-          />
-          <div>
-            {
-              result
-            }
-          </div>
         </header>
+        <main className="App-main">
+            <h1>
+              Tránsito Medio Diario Anual
+            </h1>
+            <p>
+              Es el promedio anual de vehículos que recorren una sección
+              de camino determinada, durante un día.
+            </p>
+              <section className="App-main__section">
+                <table className="App-main__section-table">
+                  <tr>
+                    <th rowSpan="2"><label>Automóviles</label></th>
+                    <th><label>Mes del Censo</label></th>
+                    <th><label>Día del Censo</label></th>
+                    <th><label>Desde hs:</label></th>
+                    <th><label>Hasta horas:</label></th>
+                    <th><label>Censo de automóviles</label></th>
+                    <th rowSpan="2"><div>{result}</div></th>
+                  </tr>
+                  <tr>
+                    <td><input name="mes" onChange={onChange}/></td>
+                    <td><input name="dia" onChange={onChange}/></td>
+                    <td><input name="desde_hs" onChange={onChange}/></td>
+                    <td><input name="hasta_hs" onChange={onChange}/></td>
+                    <td><input name="censoAut" onChange={onChange}/></td>
+                  </tr>
+                </table>
+              </section>
+            <section className="App-main__section">
+              <table className="App-main__section-table">
+                <tr>
+                  <th rowSpan="2"><label>Camiones y ómnibus</label></th>
+                  <th><label>Mes del Censo</label></th>                  
+                  <th><label>Día del Censo</label></th>
+                  <th><label>Desde hs:</label></th>
+                  <th><label>Hasta horas:</label></th>
+                  <th><label>Censo</label></th>
+                </tr>
+                <tr>
+                  <td><input name="mes" onChange={onChange}/></td>
+                  <td><input name="dia" onChange={onChange}/></td>
+                  <td><input name="desde_hs" onChange={onChange}/></td>
+                  <td><input name="hasta_hs" onChange={onChange}/></td>
+                  <td><input name="censoCam" onChange={onChange}/></td>
+                </tr>
+              </table>
+            </section>
+        </main>
       </div>
     </React.Fragment>
   );
