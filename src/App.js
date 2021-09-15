@@ -137,8 +137,34 @@ function App() {
                     <th><div>TMDA</div></th>
                   </tr>
                   <tr>
-                    <td><input name="mes" onChange={onChange}/></td>
-                    <td><input name="dia" onChange={onChange}/></td>
+                    <td>
+                      <select name="mes" placeHolder="Enero" onChange={onChange}>
+                        <option value="enero">Enero</option>
+                        <option value="febrero">Febrero</option>
+                        <option value="marzo">Marzo</option>
+                        <option value="abril">Abril</option>
+                        <option value="mayo">Mayo</option>
+                        <option value="junio">Junio</option>
+                        <option value="julio">Julio</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="setiembre">Setiembre</option>
+                        <option value="octubre">Octubre</option>
+                        <option value="noviembre">Noviembre</option>
+                        <option value="diciembre">Diciembre</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="dia" placeHolder="Lunes" onChange={onChange}>
+                        <option value="lunes">Lunes</option>
+                        <option value="martes">Martes</option>
+                        <option value="miercoles">Miercoles</option>
+                        <option value="jueves">Jueves</option>
+                        <option value="viernes">Viernes</option>
+                        <option value="sabado">Sabado</option>
+                        <option value="domingo">Domingo</option>
+                      </select>
+                    </td>
+
                     <td><input name="desde_hs" onChange={onChange}/></td>
                     <td><input name="hasta_hs" onChange={onChange}/></td>
                     <td><input name="censoAut" onChange={onChange}/></td>
