@@ -41,20 +41,25 @@
 }
 
 input {
-  width: 150px;
+  width: 100px;
   margin: 5px;
+  color: #184061;
+}
+select {
+  width: 100px;
+  margin: 5px;
+  color: #184061;
 }
 
 label {
+  width: 100px;
   font-size: 15px;
-  width: 150px;
   margin: 5px;
 }
 .App-header__Logo {
   width: 50px;
   margin: 20px;
   padding: 5px;
-
 }
 
 .App-link {
