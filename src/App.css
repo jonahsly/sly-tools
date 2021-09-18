@@ -14,8 +14,13 @@
 }
 
 .App-header {
+  position: absolute;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #184061;
-  min-height: 10vh;
+  height: 64px;
+  box-shadow: rgb(71, 71, 71);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,8 +30,8 @@
 }
 
 .App-main {
-  background-color: #4B6587;
-  min-height: 90vh;
+  background-color: #6d6d6d;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,24 +40,28 @@
   color: #C8C6C6;
 }
 
+
 .App-main__section-table {
   background-color: #184061;
-  margin: 15px;
+  margin: 10px;
+  border: 10px;
+  padding: 5px;
 }
 
+
 input {
-  width: 100px;
+  width: 140px;
   margin: 5px;
   color: #184061;
 }
 select {
-  width: 100px;
+  width: 140px;
   margin: 5px;
   color: #184061;
 }
 
 label {
-  width: 100px;
+  width: 140px;
   font-size: 15px;
   margin: 5px;
 }

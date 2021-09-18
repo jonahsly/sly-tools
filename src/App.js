@@ -112,11 +112,12 @@ function App() {
     <React.Fragment>
       <div className="App">
         <header className="App-header">
-          <h1>
-            <a href="./"><b>Sly-Tools</b></a>
-          </h1>
-
-          <img className="App-header__Logo" src={logo} alt="Logo"/>
+          
+            <h1>
+              <a href="./"><b>Sly-Tools</b></a>
+            </h1>
+            <img className="App-header__Logo" src={logo} alt="Logo"/>
+          
         </header>
         <main className="App-main">
             <h1>
@@ -133,8 +134,8 @@ function App() {
                     <th><label>Día del Censo</label></th>
                     <th><label>Desde hs:</label></th>
                     <th><label>Hasta horas:</label></th>
-                    <th><label>Censo de automóviles</label></th>
-                    <th><div>TMDA</div></th>
+                    <th><label>Censo</label></th>
+                    <th><label>TMDA</label></th>
                   </tr>
                   <tr>
                     <td>
@@ -164,7 +165,6 @@ function App() {
                         <option value="domingo">Domingo</option>
                       </select>
                     </td>
-
                     <td><input name="desde_hs" onChange={onChange}/></td>
                     <td><input name="hasta_hs" onChange={onChange}/></td>
                     <td><input name="censoAut" onChange={onChange}/></td>
@@ -175,14 +175,13 @@ function App() {
               <section className="App-main__section">
                 <h6>Camiones y ómnibus</h6>
                 <table className="App-main__section-table">
-                  
                   <tr>
                     <th><label>Mes del Censo</label></th>
                     <th><label>Día del Censo</label></th>
                     <th><label>Desde hs:</label></th>
                     <th><label>Hasta horas:</label></th>
-                    <th><label>Censo de automóviles</label></th>
-                    <th><div>TMDA</div></th>
+                    <th><label>Censo</label></th>
+                    <th><label>TMDA</label></th>
                   </tr>
                   <tr>
                     <td>
