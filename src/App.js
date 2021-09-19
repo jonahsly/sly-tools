@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import logo from "./images/logo.png"
+import Select from "./components/Select"
 
 function App() {
   
@@ -108,6 +109,32 @@ function App() {
       [name2]: parseFloat(value2),
     })
   }
+
+  const months = [
+    { value: "enero", name: "Enero" },
+    { value: "febrero", name: "Febrero" },
+    { value: "marzo", name: "Marzo" },
+    { value: "abril", name: "Abril" },
+    { value: "mayo", name: "Mayo" },
+    { value: "junio", name: "Junio" },
+    { value: "julio", name: "Julio" },
+    { value: "agosto", name: "Agosto" },
+    { value: "setiembre", name: "Setiembre" },
+    { value: "octubre", name: "Octubre" },
+    { value: "noviembre", name: "Noviembre" },
+    { value: "diciembre", name: "Diciembre" },
+  ];
+
+  const days = [
+    { value: "lunes", name: "Lunes" },
+    { value: "martes", name: "Martes" },
+    { value: "miercoles", name: "Miercoles" },
+    { value: "jueves", name: "Jueves" },
+    { value: "viernes", name: "Viernes" },
+    { value: "sabado", name: "Sabado" },
+    { value: "domingo", name: "Domingo" },
+  ];
+
   return (
     <React.Fragment>
       <div className="App">
@@ -139,31 +166,20 @@ function App() {
                   </tr>
                   <tr>
                     <td>
-                      <select name="mes" placeHolder="Enero" onChange={onChange}>
-                        <option value="enero">Enero</option>
-                        <option value="febrero">Febrero</option>
-                        <option value="marzo">Marzo</option>
-                        <option value="abril">Abril</option>
-                        <option value="mayo">Mayo</option>
-                        <option value="junio">Junio</option>
-                        <option value="julio">Julio</option>
-                        <option value="agosto">Agosto</option>
-                        <option value="setiembre">Setiembre</option>
-                        <option value="octubre">Octubre</option>
-                        <option value="noviembre">Noviembre</option>
-                        <option value="diciembre">Diciembre</option>
-                      </select>
+                      <Select
+                        name="mes"
+                        placeholder="Enero"
+                        onChange={onChange}
+                        items={months}
+                      />
                     </td>
                     <td>
-                      <select name="dia" placeHolder="Lunes" onChange={onChange}>
-                        <option value="lunes">Lunes</option>
-                        <option value="martes">Martes</option>
-                        <option value="miercoles">Miercoles</option>
-                        <option value="jueves">Jueves</option>
-                        <option value="viernes">Viernes</option>
-                        <option value="sabado">Sabado</option>
-                        <option value="domingo">Domingo</option>
-                      </select>
+                      <Select
+                        name="dia"
+                        placeholder="Lunes"
+                        onChange={onChange}
+                        items={days}
+                      />
                     </td>
                     <td><input name="desde_hs" onChange={onChange}/></td>
                     <td><input name="hasta_hs" onChange={onChange}/></td>
@@ -185,7 +201,7 @@ function App() {
                   </tr>
                   <tr>
                     <td>
-                      <select name="mes2" placeHolder="Enero" onChange={onChange}>
+                      <select name="mes2" placeholder="Enero" onChange={onChange}>
                         <option value="enero">Enero</option>
                         <option value="febrero">Febrero</option>
                         <option value="marzo">Marzo</option>
@@ -201,7 +217,7 @@ function App() {
                       </select>
                     </td>
                     <td>
-                      <select name="dia2" placeHolder="Lunes" onChange={onChange}>
+                      <select name="dia2" placeholder="Lunes" onChange={onChange}>
                         <option value="lunes">Lunes</option>
                         <option value="martes">Martes</option>
                         <option value="miercoles">Miercoles</option>
