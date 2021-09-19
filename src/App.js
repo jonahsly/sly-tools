@@ -9,7 +9,7 @@ function App() {
     dia: 'Lunes',
     desde_hs: 8,
     hasta_hs: 13,
-    censoAut: 251
+    censoAut: 0
   })
   const censoA = tmda.censoAut;
   const porcAdia = [84.01, 81.19, 85.35, 83.12, 83.98, 123, 91];
@@ -63,7 +63,7 @@ function App() {
     dia2: 'Lunes',
     desde_hs2: 8,
     hasta_hs2: 13,
-    censoCam: 120
+    censoCam: 0
   })
   const censoB = tmda2.censoCam;
   const porcAdia2 = [108.69, 110.55, 105.27, 114.27, 111.85, 109.86, 39.51];
@@ -93,6 +93,7 @@ function App() {
     }
   }
   const result2 = Math.round(censoB * (100 / calculateHora2()) * (100 / calculateDia2()) * (100 / calculateMes2()));
+  
   const onChange2 = (event) => {
     const value2 = event.target.value;
     const name2 = event.target.name;    
@@ -120,12 +121,14 @@ function App() {
           
         </header>
         <main className="App-main">
+          <div className="App-main__div">
             <h1>
               Tránsito Medio Diario Anual
             </h1>
             <p>
               Es el promedio anual de vehículos que pasan<br/>durante las 24 horas por un punto determinado del camino<br/>y durante los 365 días del año.
             </p>
+          </div>
               <section className="App-main__section">
                 <h6>Automóviles</h6>
                 <table className="App-main__section-table">
@@ -165,9 +168,9 @@ function App() {
                         <option value="domingo">Domingo</option>
                       </select>
                     </td>
-                    <td><input name="desde_hs" onChange={onChange}/></td>
-                    <td><input name="hasta_hs" onChange={onChange}/></td>
-                    <td><input name="censoAut" onChange={onChange}/></td>
+                    <td><input name="desde_hs" placeHolder="0" onChange={onChange}/></td>
+                    <td><input name="hasta_hs" placeHolder="24" onChange={onChange}/></td>
+                    <td><input name="censoAut" placeHolder="0" onChange={onChange}/></td>
                     <td><div>{result1}</div></td>
                   </tr>
                 </table>
@@ -185,7 +188,7 @@ function App() {
                   </tr>
                   <tr>
                     <td>
-                      <select name="mes2" placeHolder="Enero" onChange={onChange}>
+                      <select name="mes2" placeHolder="Enero" onChange={onChange2}>
                         <option value="enero">Enero</option>
                         <option value="febrero">Febrero</option>
                         <option value="marzo">Marzo</option>
@@ -201,7 +204,7 @@ function App() {
                       </select>
                     </td>
                     <td>
-                      <select name="dia2" placeHolder="Lunes" onChange={onChange}>
+                      <select name="dia2" placeHolder="Lunes" onChange={onChange2}>
                         <option value="lunes">Lunes</option>
                         <option value="martes">Martes</option>
                         <option value="miercoles">Miercoles</option>
@@ -211,9 +214,9 @@ function App() {
                         <option value="domingo">Domingo</option>
                       </select>
                     </td>
-                    <td><input name="desde_hs2" onChange={onChange2}/></td>
-                    <td><input name="hasta_hs2" onChange={onChange2}/></td>
-                    <td><input name="censoCam" onChange={onChange2}/></td>
+                    <td><input name="desde_hs2" placeHolder="0" onChange={onChange2}/></td>
+                    <td><input name="hasta_hs2" placeHolder="24" onChange={onChange2}/></td>
+                    <td><input name="censoCam" placeHolder="0" onChange={onChange2}/></td>
                     <td><div>{result2}</div></td>
                   </tr>
                 </table>
